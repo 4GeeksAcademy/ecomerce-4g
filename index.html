@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio — LadyBug Shop</title>
+  <meta name="description" content="LadyBug Shop: ropa con estilo parisino. Descubre nuestra colección de calzado, camisas, pantalones y accesorios." />
+
+  <!-- Google Fonts: Lora + Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- JSON-LD Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LadyBug Shop",
+    "description": "La elegancia que trae suerte",
+    "url": "https://ladybug.example",
+    "email": "contacto@ladybug.example",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "París",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+</head>
+<body class="flex min-h-screen flex-col overflow-x-hidden bg-orange-50 font-['Poppins'] text-stone-900">
+  <!-- Skip to content -->
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-red-700 focus:shadow focus:outline-none focus:ring-2 focus:ring-red-700/30">
+    Saltar al contenido
+  </a>
+
+  <!-- ========== HEADER (NAVBAR) ========== -->
+  <header class="border-b border-stone-200 bg-orange-50">
+    <nav aria-label="Principal" class="mx-auto flex w-full max-w-7xl flex-wrap items-center gap-4 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+      <!-- Logo -->
+      <a href="index.html" class="shrink-0 font-['Lora'] text-lg font-semibold text-stone-900 sm:text-xl" aria-current="page">LadyBug Shop</a>
+
+      <!-- Account menu (mobile row 1, desktop row 1) -->
+      <details class="relative ml-auto md:ml-0">
+        <summary class="cursor-pointer list-none rounded border border-stone-300 px-3 py-1.5 font-['Poppins'] text-sm font-medium text-stone-700 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30" aria-label="Menú de cuenta">
+          <svg class="inline-block h-4 w-4 align-middle" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <span class="ml-1 align-middle">Cuenta</span>
+        </summary>
+        <div class="absolute right-0 z-10 mt-2 w-44 rounded border border-stone-200 bg-white shadow-sm">
+          <a href="carrito.html" class="block px-4 py-2 text-sm text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Mi carrito</a>
+          <a href="checkout.html" class="block px-4 py-2 text-sm text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Checkout</a>
+        </div>
+      </details>
+
+      <!-- Search form (mobile row 2, desktop row 1) -->
+      <form role="search" action="catalogo.html" method="get" class="flex w-full md:w-auto md:flex-1 md:max-w-xs">
+        <label for="search-nav" class="sr-only">Buscar productos</label>
+        <input
+          id="search-nav"
+          type="search"
+          name="q"
+          placeholder="Buscar…"
+          class="flex-1 rounded-l border border-stone-300 bg-white px-3 py-2 text-sm text-stone-900 placeholder:text-stone-400 focus:border-red-700 focus:outline-none focus:ring-2 focus:ring-red-700/30"
+        />
+        <button type="submit" class="rounded-r border border-l-0 border-stone-300 bg-stone-100 px-3 py-2 text-sm text-stone-700 hover:bg-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30" aria-label="Buscar">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Navigation links (mobile row 3, desktop row 1) -->
+      <ul class="flex w-full flex-wrap gap-x-5 gap-y-1 text-sm md:w-auto">
+        <li><a href="index.html" class="text-red-700 font-medium" aria-current="page">Inicio</a></li>
+        <li><a href="catalogo.html" class="text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Catálogo</a></li>
+        <li><a href="producto.html" class="text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Producto</a></li>
+        <li><a href="carrito.html" class="text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Carrito</a></li>
+        <li><a href="checkout.html" class="text-stone-700 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="contenido" class="flex-1">
+    <!-- ===== HERO SECTION ===== -->
+    <section aria-labelledby="hero-title">
+      <!-- Full-width hero image -->
+      <div class="aspect-video w-full bg-gradient-to-br from-amber-100 via-orange-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Bienvenida a LadyBug Shop">
+        <svg class="h-12 w-12 text-stone-400 sm:h-16 sm:w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+        </svg>
+        <span class="ml-2 text-sm text-stone-400 sm:text-base">Foto próximamente</span>
+      </div>
+      <!-- Hero content within max-w-7xl -->
+      <div class="mx-auto max-w-7xl px-4 pb-12 pt-6 text-center sm:px-6 sm:pt-10 lg:px-8 lg:pt-14">
+        <h1 id="hero-title" class="font-['Lora'] text-2xl font-semibold text-stone-900 sm:text-3xl md:text-4xl">
+          Bienvenido a LadyBug Shop
+        </h1>
+        <p class="mx-auto mt-3 max-w-xl text-sm text-stone-500 sm:text-base md:mt-4">
+          La elegancia que trae suerte
+        </p>
+        <a href="catalogo.html" class="mt-5 inline-block rounded bg-red-700 px-7 py-3 text-sm font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30 md:mt-6 md:text-base">
+          Ver colección
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== NOVEDADES SECTION ===== -->
+    <section aria-labelledby="novedades-title" class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <h2 id="novedades-title" class="font-['Lora'] text-xl font-semibold text-stone-900 sm:text-2xl md:text-3xl">
+        Novedades
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Card 1 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Blusa Aurora — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Blusa Aurora</h3>
+          <p class="mt-1 text-sm text-stone-500">49,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 2 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Vestido Margot — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Vestido Margot</h3>
+          <p class="mt-1 text-sm text-stone-500">79,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 3 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Chaqueta Celeste — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Chaqueta Celeste</h3>
+          <p class="mt-1 text-sm text-stone-500">89,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 4 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Bolso Léonie — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Bolso Léonie</h3>
+          <p class="mt-1 text-sm text-stone-500">59,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== MÁS VENDIDOS SECTION ===== -->
+    <section aria-labelledby="mas-vendidos-title" class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+      <h2 id="mas-vendidos-title" class="font-['Lora'] text-xl font-semibold text-stone-900 sm:text-2xl md:text-3xl">
+        Más vendidos
+      </h2>
+      <div class="mt-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <!-- Card 1 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Camisa Olivier — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Camisa Olivier</h3>
+          <p class="mt-1 text-sm text-stone-500">44,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 2 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Pantalón Élise — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Pantalón Élise</h3>
+          <p class="mt-1 text-sm text-stone-500">64,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 3 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Jersey Bastien — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Jersey Bastien</h3>
+          <p class="mt-1 text-sm text-stone-500">54,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+        <!-- Card 4 -->
+        <article class="rounded-lg border border-stone-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <div class="mb-3 aspect-[3/4] w-full rounded-md bg-gradient-to-br from-amber-100 to-stone-200 flex items-center justify-center" role="img" aria-label="Falda Camille — imagen del producto">
+            <svg class="h-8 w-8 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+            <span class="ml-2 text-xs text-stone-400">Imagen del producto</span>
+          </div>
+          <h3 class="font-['Poppins'] text-sm font-medium text-stone-900">Falda Camille</h3>
+          <p class="mt-1 text-sm text-stone-500">49,99 €</p>
+          <a href="producto.html" class="mt-3 inline-block rounded bg-red-700 px-4 py-2 text-xs font-medium text-white transition-colors duration-150 hover:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Ver producto</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-stone-200 bg-orange-100">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Categorías -->
+        <nav aria-label="Categorías">
+          <h2 class="font-['Poppins'] text-sm font-semibold uppercase tracking-wider text-stone-700">Categorías</h2>
+          <ul class="mt-4 space-y-2">
+            <li><a href="catalogo.html?categoria=calzado" class="text-sm text-stone-600 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Calzado</a></li>
+            <li><a href="catalogo.html?categoria=camisas" class="text-sm text-stone-600 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Camisas</a></li>
+            <li><a href="catalogo.html?categoria=pantalones" class="text-sm text-stone-600 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Pantalones</a></li>
+            <li><a href="catalogo.html?categoria=accesorios" class="text-sm text-stone-600 hover:text-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-700/30">Accesorios</a></li>
+          </ul>
+        </nav>
+        <!-- Legal -->
+        <section>
+          <h2 class="font-['Poppins'] text-sm font-semibold uppercase tracking-wider text-stone-700">Legal</h2>
+          <ul class="mt-4 space-y-2">
+            <li class="text-sm text-stone-600">Términos y condiciones</li>
+            <li class="text-sm text-stone-600">Política de privacidad</li>
+            <li class="text-sm text-stone-600">Sobre la marca</li>
+          </ul>
+        </section>
+        <!-- Contacto -->
+        <section>
+          <h2 class="font-['Poppins'] text-sm font-semibold uppercase tracking-wider text-stone-700">Contacto</h2>
+          <ul class="mt-4 space-y-2">
+            <li class="text-sm text-stone-600">contacto@ladybug.example</li>
+            <li class="text-sm text-stone-600">París, Francia</li>
+          </ul>
+        </section>
+      </div>
+      <!-- Copyright -->
+      <div class="mt-8 border-t border-stone-300 pt-6">
+        <p class="text-xs text-stone-500">&copy; LadyBug Shop &middot; París</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
